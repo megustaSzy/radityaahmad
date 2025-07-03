@@ -569,9 +569,9 @@ section:last-of-type {
 }
 .certificates-grid {
   display: grid;
-  /* Diubah menjadi 2 kolom per baris */
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem; /* Jarak sedikit diperbesar agar tidak terlalu rapat */
+  /* Diubah menjadi 3 kolom per baris */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* Jarak bisa sedikit dikecilkan kembali */
 }
 /* Ganti kode .certificate-card Anda */
 .certificate-card {
