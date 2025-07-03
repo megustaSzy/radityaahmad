@@ -1,0 +1,782 @@
+/* ===================================================================
+   FILE CSS FINAL - TEMA GELAP MODERN & KONSISTEN
+   =================================================================== */
+
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* =================================
+   PENGATURAN DASAR & GLOBAL
+   ================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1a253c; /* Latar belakang utama menjadi gelap */
+  color: #ccc; /* Warna teks default menjadi terang */
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #2c3e50;
+}
+::-webkit-scrollbar-thumb {
+  background: #00aaff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #007bff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 5rem 2rem;
+}
+
+/* Animasi Saat di-Scroll */
+.animasi {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animasi.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #fff; /* Judul section menjadi putih */
+  font-weight: 700;
+}
+
+/* =================================
+   HEADER & NAVIGASI
+   ================================= */
+header {
+  background-color: rgba(
+    26,
+    37,
+    60,
+    0.8
+  ); /* Header disesuaikan dengan tema gelap */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav .logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00aaff;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00aaff;
+  transition: width 0.4s ease-in-out;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* =================================
+   HERO SECTION
+   ================================= */
+#hero {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #1a253c 0%, #2c3e50 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+.hero-text {
+  animation: fadeIn 1.5s ease-out;
+}
+.hero-intro {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #00aaff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+/* style.css */
+
+.hero-text h1 {
+  font-size: 4.5rem; /* Ukuran font untuk judul keahlian */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  min-height: 80px;
+  transition: font-size 0.4s ease; /* Tambahkan transisi agar mulus */
+}
+
+/* 💡 KELAS BARU UNTUK UKURAN FONT NAMA 💡 */
+.hero-text h1.is-name {
+  font-size: 3.8rem; /* Ukuran font lebih kecil khusus untuk nama */
+}
+
+.hero-text h1::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #00aaff;
+  }
+}
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 1.5rem 0 2.5rem 0;
+  color: #ccc;
+  line-height: 1.7;
+}
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-image: linear-gradient(45deg, #007bff, #00aaff);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 170, 255, 0.6);
+}
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero-photo {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 8px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+.hero-specializations {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1100px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 3;
+}
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #eee;
+  font-weight: 500;
+}
+.spec-item i {
+  font-size: 1.5rem;
+  color: #00aaff;
+}
+.hero-bg-shape {
+  position: absolute;
+  background: #00aaff;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 1;
+}
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -50px;
+  left: -50px;
+  opacity: 0.2;
+}
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  opacity: 0.3;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* =================================
+   MAIN CONTENT SECTIONS
+   ================================= */
+main {
+  padding-top: 60px;
+}
+section {
+  border-bottom: 1px solid #2c3e50; /* Garis pemisah antar section disesuaikan */
+}
+section:last-of-type {
+  border-bottom: none;
+}
+
+/* TENTANG SAYA */
+#about {
+  background-color: #2c3e50;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(0, 170, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.interactive-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 170, 255, 0.2);
+  cursor: pointer;
+}
+
+/* KEAHLIAN */
+/* style.css */
+
+/* =================================
+   DESAIN BARU BAGIAN KEAHLIAN (INTERAKTIF)
+   ================================= */
+/* style.css */
+
+/* =================================
+   DESAIN FINAL BAGIAN KEAHLIAN (FOCUS GRID)
+   ================================= */
+#skills {
+  background-color: #1a253c; /* Diubah agar warnanya sama dengan section Keahlian */
+}
+
+#skills h2 {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skills-grid-container {
+  background-color: rgba(44, 62, 80, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Jarak antar baris keahlian */
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Kolom untuk judul dan untuk pills */
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2.5rem;
+  transition: background-color 0.4s ease;
+}
+
+.skill-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.skill-category {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: right;
+  padding-right: 2rem;
+  border-right: 2px solid #00aaff;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Animasi muncul satu per satu (Stagger) */
+.skill-pill {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.7rem 1.3rem;
+  font-weight: 500;
+  opacity: 0; /* Sembunyi secara default */
+  transform: translateY(10px); /* Posisi awal dari bawah */
+  animation: pill-fade-in 0.5s ease forwards;
+  animation-delay: var(--delay); /* Delay diambil dari style di HTML */
+}
+
+@keyframes pill-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-pill:hover {
+  background-color: #00aaff;
+  color: #1a253c;
+  border-color: #00aaff;
+  transform: scale(1.05); /* Sedikit membesar saat disentuh */
+  box-shadow: 0 4px 20px rgba(0, 170, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+/* Elemen Dekoratif (opsional, bisa disesuaikan) */
+.skills-bg-shape {
+  position: absolute;
+  background: #007bff;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 1;
+}
+.shape-3 {
+  width: 300px;
+  height: 300px;
+  top: 0;
+  right: 0;
+  opacity: 0.15;
+}
+.shape-4 {
+  width: 250px;
+  height: 250px;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+  .skill-row {
+    grid-template-columns: 1fr; /* Judul dan pills ditumpuk */
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .skill-category {
+    text-align: left;
+    border-right: none;
+    border-bottom: 2px solid #00aaff;
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Bentuk Dekoratif (tetap sama) */
+.skills-bg-shape {
+  position: absolute;
+  background: #007bff;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 1;
+}
+.shape-3 {
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  right: -50px;
+  opacity: 0.15;
+}
+.shape-4 {
+  width: 200px;
+  height: 200px;
+  bottom: 5%;
+  left: -50px;
+  opacity: 0.1;
+}
+
+/* PENGALAMAN */
+/* style.css */
+
+/* =================================
+   DESAIN BARU BAGIAN PENGALAMAN
+   ================================= */
+
+#experience {
+  background-color: #1a253c; /* Diubah agar warnanya sama dengan section Keahlian */
+}
+
+#experience h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.experience-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  /* Efek Kaca (Glassmorphism) */
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  /* Pinggiran lebih melengkung */
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 5px solid #00aaff; /* Garis aksen di kiri */
+
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.experience-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.company-logo {
+  width: 80px; /* Ukuran logo disesuaikan */
+  height: 80px;
+  border-radius: 12px; /* Dibuat sedikit melengkung juga */
+  object-fit: contain;
+  background-color: #fff; /* Memberi latar belakang putih agar logo jelas */
+  padding: 10px;
+  flex-shrink: 0; /* Mencegah logo menyusut */
+}
+
+.experience-details h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.experience-details .date {
+  color: #00aaff; /* Warna tanggal dibuat menonjol */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.experience-details ul {
+  padding-left: 20px;
+  color: #ccc;
+}
+
+.experience-details ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* SERTIFIKASI */
+#certificates {
+  background-color: #1a253c; /* Diubah agar warnanya sama dengan section Keahlian */
+}
+.certificates-grid {
+  display: grid;
+  /* Diubah menjadi 2 kolom per baris */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem; /* Jarak sedikit diperbesar agar tidak terlalu rapat */
+}
+/* Ganti kode .certificate-card Anda */
+.certificate-card {
+  background-color: #2c3e50;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  /* Hapus baris aspect-ratio dari sini */
+}
+.certificate-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+/* Ganti kode .certificate-card img Anda */
+.certificate-card img {
+  width: 100%;
+  height: auto; /* Biarkan tinggi gambar menyesuaikan secara otomatis */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block; /* Mencegah adanya spasi kosong di bawah gambar */
+}
+
+.certificate-card:hover img {
+  transform: scale(1.05);
+}
+
+/* PORTOFOLIO PROYEK */
+/* style.css */
+
+/* =================================
+   DESAIN BARU BAGIAN PROYEK (FORMAT LIST)
+   ================================= */
+
+/* =================================
+   DESAIN BARU PROYEK (FORMAT TEKS SAJA)
+   ================================= */
+
+#projects {
+  background-color: #2c3e50;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Jarak antar item proyek */
+}
+
+/* Mengatur setiap kartu proyek */
+.project-item {
+  background-color: rgba(26, 37, 60, 0.6);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Mengatur baris judul dan tombol link */
+.project-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-item-details h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin: 0;
+}
+
+.project-item-details p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* Mengatur tag teknologi */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.project-tech span {
+  background-color: rgba(0, 170, 255, 0.1);
+  color: #00aaff;
+  border: 1px solid rgba(0, 170, 255, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Mengatur tombol link */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid #00aaff;
+  color: #00aaff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  white-space: nowrap; /* Mencegah teks turun baris */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.project-link:hover {
+  background-color: #00aaff;
+  color: #1a253c;
+}
+
+/* Penyesuaian untuk layar kecil */
+@media (max-width: 768px) {
+  .project-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* KOLABORASI & KONTAK */
+#contact {
+  background-color: #1a253c;
+  text-align: center;
+}
+.social-link {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0 1.5rem;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+}
+.social-link:hover {
+  color: #00aaff;
+  transform: translateY(-8px);
+}
+
+/* FOOTER */
+footer {
+  background-color: #111a29;
+  color: #888;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* =================================
+   RESPONSIVE MEDIA QUERIES
+   ================================= */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  nav ul {
+    display: none;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image-container {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  .hero-photo {
+    width: 250px;
+    height: 250px;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  .hero-specializations {
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+  }
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .skills-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  .skill-column {
+    border-right: none;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .skill-column:last-child {
+    border-bottom: none;
+  }
+}
