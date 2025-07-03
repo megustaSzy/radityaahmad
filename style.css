@@ -568,10 +568,10 @@ section:last-of-type {
   background-color: #1a253c; /* Diubah agar warnanya sama dengan section Keahlian */
 }
 .certificates-grid {
-  display: grid;
-  /* Diubah menjadi 3 kolom per baris */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem; /* Jarak bisa sedikit dikecilkan kembali */
+    display: grid;
+    /* Mengatur kolom agar otomatis menyesuaikan dengan lebar layar */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 /* Ganti kode .certificate-card Anda */
 .certificate-card {
