@@ -564,41 +564,34 @@ section:last-of-type {
 }
 
 /* SERTIFIKASI */
-/* =================================
-   PERBAIKAN BAGIAN SERTIFIKASI
-   ================================= */
-
 #certificates {
-  background-color: #1a253c;
+  background-color: #1a253c; /* Diubah agar warnanya sama dengan section Keahlian */
 }
-
 .certificates-grid {
   display: grid;
-  /* Diatur menjadi 2 kolom per baris */
+  /* Diubah menjadi 2 kolom per baris */
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  align-items: start; /* Pastikan item di baris baru mulai dari atas */
+  gap: 2.5rem; /* Jarak sedikit diperbesar agar tidak terlalu rapat */
 }
-
+/* Ganti kode .certificate-card Anda */
 .certificate-card {
   background-color: #2c3e50;
   border-radius: 12px;
   transition: all 0.3s ease;
   overflow: hidden;
-  /* Hapus 'aspect-ratio' agar tinggi kartu fleksibel */
+  /* Hapus baris aspect-ratio dari sini */
 }
-
 .certificate-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
-
+/* Ganti kode .certificate-card img Anda */
 .certificate-card img {
   width: 100%;
   height: auto; /* Biarkan tinggi gambar menyesuaikan secara otomatis */
-  display: block; /* Mencegah spasi kosong di bawah gambar */
+  object-fit: cover;
   transition: transform 0.3s ease;
-  /* Properti object-fit tidak lagi diperlukan di sini */
+  display: block; /* Mencegah adanya spasi kosong di bawah gambar */
 }
 
 .certificate-card:hover img {
